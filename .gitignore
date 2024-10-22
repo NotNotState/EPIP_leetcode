@@ -1,0 +1,3 @@
+#Excluding cause it's only for me
+/EPIP/review.py
+*.xlsx
