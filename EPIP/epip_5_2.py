@@ -1,4 +1,4 @@
-def increment_list(A: list[int]) -> list[int]:
+def increment_list(A: list[int]) -> None:
     A[-1] += 1 # add 1 to last element in list
 
     for i in reversed(range(1, len(A))):
@@ -12,9 +12,7 @@ def increment_list(A: list[int]) -> list[int]:
         A[0] = 1
         A.append(0)
 
-    return A
-
 if __name__ == "__main__":
     test = [9,9,9]
-
-    print(increment_list(test))
+    increment_list(test)
+    print(test)

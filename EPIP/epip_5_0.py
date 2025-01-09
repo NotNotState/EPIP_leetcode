@@ -1,4 +1,10 @@
-def parity_partition(nummies: list[int]) -> list[int]:
+def parity_partition(nummies: list[int]) -> None:
+    """
+    nummies: unsorted array of ints
+
+    Works on python's pass-by-(OBJECT)-reference (not strictly pass-by-reference) on mutable objects
+    Note: re-assignment doesn't modify the passed mutable object, only direct operations on its variable do
+    """
     even_index, odd_index = 0, len(nummies)-1
 
     while even_index < odd_index:
@@ -7,12 +13,9 @@ def parity_partition(nummies: list[int]) -> list[int]:
             even_index += 1
         else:
             nummies[even_index], nummies[odd_index] = nummies[odd_index], nummies[even_index]
-        
-        odd_index -= 1
-    
-    return nummies
+            odd_index -= 1
 
 if __name__ == "__main__":
-    test = [1, 2, 4, 3]
-
-    print(parity_partition(test))
+    test = [3, 4, 9, 2, 6, 1]
+    parity_partition(test)
+    print(test)
